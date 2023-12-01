@@ -1,0 +1,137 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/art.css">
+    <title>Artist</title>
+</head>
+<body>
+  <button id="backButton" class="return-btn">Back</button>
+      <div class="artist">
+        <img src="{{.Image}}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h3 class="card-title">{{.Name}}</h3>
+
+          <p>CreationDate: {{.CreationDate}}</p>
+          <p>Members: 
+            {{- $first := true }}
+            {{- range $index, $element := .Members }}
+              {{- if not $first }}, {{ end }}
+              {{$element}}
+              {{- $first = false }}
+            {{- end }}
+          </p>
+          <p>First album: {{.FirstAlbum}}</p>
+          <p class="upcoming-events">Upcoming events:</p>
+          {{- range $key, $value := .Relation.Relations }}
+          <h4 id="ch">{{$key}}</h4>
+         
+          <ul>
+            {{- range $index, $location := $value }}
+            <li>{{$location}}</li>
+            {{- end }}
+          </ul>
+          {{- end }}
+        </div>
+        
+
+        <a href="/" class="return-btn">Return</a>
+    </div>
+    <script src="static/script.js"></script>
+    <script>
+      // Назначьте обработчик события на кнопку "Назад"
+      document.getElementById("backButton").addEventListener("click", function() {
+        window.history.back();
+      });
+    </script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Artists</title>
+<link rel="stylesheet" href='/static/artist.css'>
+<link href="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.css" rel="stylesheet">
+<script src="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.js"></script>
+</head>
+<body>
+  <section class="MiddleHalf"> 
+ 
+   
+    <div calss="firstHalf"> 
+      
+      <img src="{{.Artist.Image}}" alt="" class="Img">
+    
+      <p class="Helper">Members:</p>
+      {{range .Artist.Members}}
+      <p class="Members">{{.}}</p>
+      
+        {{end}}
+
+      
+    </div>
+
+ 
+    <div class="secondHalf"> 
+   <div class="firstPartFromSecondHalf">
+    <p class="Name"> {{.Artist.Name}}</p>
+    <p class="Date">Creation date: {{.Artist.CreationDate}}</p>
+    <p class="Album">First album: {{.Artist.FirstAlbum}}</p>
+    <button id="backButton" class="return-btn">Back</button>
+
+           
+
+   </div>
+
+
+
+ <div class="secondPartFromSecondHalf">
+
+  {{range $location, $date := .LocADate.DatesLocations}}
+  <p class="Location"> Location:{{$location}}</p>
+  {{range $date}}
+  <li class="Dates">Date:{{.}}</li>
+  {{end}}
+  
+    {{end}}
+ </div>
+</div>
+  </section>
+  <section class="mapPosition">
+    <div id="map"  class="maps"></div>
+  </section>
+
+  <script>
+      mapboxgl.accessToken = 'pk.eyJ1IjoibW90b2JlIiwiYSI6ImNsbG0xdnQzYTJqZG8zZ21neTJuN28wemoifQ.U2Zp2USylpY-WQyXi8TYfw';
+    "{{with index .Location 0}}"
+      var map = new mapboxgl.Map({
+          container: 'map',
+          style: 'mapbox://styles/mapbox/streets-v12', // Choose the map style
+          center: ["{{index . 0}}","{{index . 1}}"], // Coordinates of the center of the map
+          zoom: 10// Initial zoom level
+      });
+"{{end}}"
+      // Add a marker at the specified coordinates
+      {{range .Location}}
+    new mapboxgl.Marker()
+          .setLngLat(["{{index . 0}}", "{{index . 1}}"])
+          .addTo(map);
+      {{end}}
+      map.addControl(new mapboxgl.NavigationControl());
+  </script>
+  <script src="static/script.js"></script>
+  <script>
+    // Назначьте обработчик события на кнопку "Назад"
+    document.getElementById("backButton").addEventListener("click", function() {
+      window.history.back();
+    });
+  </script>
+
+</body>
+
+
+
+</html>

@@ -1,0 +1,192 @@
+
+body {
+  background-image: url('123.jpeg'); /* Replace 'background.jpg' with your image file name */
+  background-size: cover; /* Cover the entire background */
+  background-position: center; /* Center the background */
+  background-repeat: no-repeat; /* Do not repeat the background */
+  margin: 0;
+}
+
+#backButton.return-btn {
+  background-color: #c00271;
+  color: #fff; /* Цвет текста белый для контраста */
+  padding: 10px 20px; /* Задаем отступы вокруг текста */
+  font-size: 16px; /* Размер текста */
+  border: none; /* Убираем границу кнопки */
+  cursor: pointer; /* Делаем указатель при наведении на кнопку */
+  border-radius: 5px; /* Закругляем углы кнопки */
+}
+
+#backButton.return-btn:hover {
+  background-color: #a0025b; /* Цвет фона при наведении */
+}
+
+
+.MiddleHalf {
+  
+    
+
+  margin-bottom: 20px;
+background:rgba(38, 38, 38, 0.7);
+margin: 0;
+padding-top: 50px;
+padding-left: 100px;
+padding-right: 100px;
+display: flex;
+
+}
+
+
+
+.Name,
+.Date,
+.Album,
+.Members,
+.Location {
+  color: #c00271;
+}
+.Img:hover{
+  box-shadow: 0px 0px 10px #c00271;
+}
+.Name{
+  margin: 0;
+ color: #c00271;
+font-family: 'Roboto', sans-serif;
+font-size: 40px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+}
+.Name:hover{
+  color: #e6e6e6d8;;
+}
+.Date{
+  margin: 0;
+  color: #D4AF66;
+font-family: 'Roboto', sans-serif;
+font-size: 24px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+}
+.Date:hover{
+  color:  #c00271;
+}
+.Album{
+  margin: 1;
+  color:#D4AF66;
+font-family: 'Roboto', sans-serif;
+font-size: 15px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+}
+.Album:hover{
+  color:  #c00271;
+}
+.Members{
+  color: #D4AF66;
+font-feature-settings: 'cpsp' on;
+font-family: 'Roboto', sans-serif;
+font-size: 15px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+    padding-left: 10px;
+}
+.Members:hover{
+  color: #c00271;
+}
+.Helper{
+ color: rgb(255, 255, 255);
+font-family: 'Roboto', sans-serif;
+font-size: 15px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+}
+.Helper:hover{
+color: rgba(255, 255, 255, 0.831);;
+}
+.Location{
+  color: #c00271;
+
+font-family: 'Roboto', sans-serif;
+font-size: 15px;
+font-style: normal;
+font-weight: 700;
+line-height: 17.5px; /* 116.667% */
+}
+.Location:hover{
+  color: #c2c2c2ca;
+}
+
+.Dates{
+  color: #E3E3E3;
+font-family: 'Roboto', sans-serif;
+font-size: 12px;
+font-style: normal;
+font-weight: 700;
+line-height: 17.5px;
+}
+.Dates:hover{
+  color: #c00271;
+}
+.secondHalf{
+  padding-left: 30px; 
+  align-content: baseline;
+  display: flex;
+  justify-content: space-between;
+  width: 100vw;
+}
+.mapPosition{
+padding: 30px
+}
+.maps{
+  height: 800px;
+  width: 100%;
+
+}
+
+
+@media (max-width:1020px) {
+  .secondHalf{
+  
+    display: block;
+  }  
+}
+
+
+
+@media (max-width:702px) {
+  .secondHalf{
+  
+    display: block;
+  } 
+  .maps{
+    height: 400px;
+  }
+  .Name{
+    font-size: 30px;
+  }
+  .Date{
+    font-size: 18px;
+  }
+}
+
+
+@media (max-width:600px) {
+  .MiddleHalf{
+    display: block;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    padding-top: 20px;
+  }
+  .secondHalf{
+    padding: 0;
+  }
+  .maps{
+    height: 400px;
+  }
+}

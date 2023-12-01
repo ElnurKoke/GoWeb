@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Результаты поиска</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <style></style>
+</head>
+<body>
+ 
+    <h1 id="search"><a href="/">Groupie-Tracker-2</a></h1>
+    <div class="search">
+        <form action="/search" method="GET">
+            <input class="search-input" type="text" name="search" id="searchInput" placeholder="Start typing to search..." autocomplete="off" list="searchOptions">
+            <!-- <datalist id="searchOptions">
+                {{range .}}
+                <option value="{{.Name}}">{{.Name}}</option>
+                {{end}}
+            </datalist> -->
+            <button class="search-button" type="submit">Find</button>
+        </form>
+        
+        <div id="suggestions" class="suggestions"></div>
+        <p></p>
+    </div>
+    <div class="container">
+        {{range .}}
+        <div class="artist">
+			<img src="{{.Image}}" alt="..." title="{{.Name}}">
+            <a href="/artists/{{.Id}}">
+                <h4>{{.Name}}</h4>
+            </a>
+        </div>
+        {{end}}
+    </div>
+    <button id="backButton" class="return-btn">ReturnBack</button>
+    <p></p>
+    <div class="line" id="filters">
+        <h1>Filters</h1>
+          <form action="/filter" method="POST">
+            <p class="fredoka-text">Numbers of Members</p>
+            <span style="opacity: 0.5;" class="fredoka-text">from</span>
+            <input class="filter-input" type="text" name="members-from" id="members-from" placeholder="1..." >
+            <span style="opacity: 0.5;" class="fredoka-text">to</span>
+            <input class="filter-input" type="text" name="members-to" id="members-to" placeholder="10..." >
+            <p class="fredoka-text">Date of creation</p> 
+            <span style="opacity: 0.5;" class="fredoka-text">from</span>
+           <input class="filter-input" type="text" name="creation-date-from" id="creation-date-from" placeholder="1960...">
+           <span style="opacity: 0.5;" class="fredoka-text">to</span>
+            <input class="filter-input" type="text" name="creation-date-to"  id="creation-date-to" placeholder="2020..."> 
+            <p class="fredoka-text">Filter by first album date</p>
+            <span style="opacity: 0.5;" class="fredoka-text">from</span> 
+            <input type="date" name="first-album-date-from" id="first-album-date-from">
+            <span style="opacity: 0.5;" class="fredoka-text">to</span> 
+            <input type="date" name="first-album-date-to" id="first-album-date-to">
+            <!-- {{range .}}
+            <ul>
+                {{- range $location, $value := .Relation.Relations }}
+                <label>
+                    <input type="checkbox" name="location" value="{{$location}}"> {{$location}}
+                  </label>
+                {{- end }}
+            
+            </ul>
+            {{- end }} -->
+            <p></p>
+            <p class="fredoka-text">Filter by locations of concerts</p>
+            <label class="checkbox-container"><input type="checkbox" name="pickedlocations[]" value="new_zealand"> NEW Zealand</label>
+            <label class="checkbox-container"><input type="checkbox" name="pickedlocations[]" value="usa"> USA</label>
+            <label class="checkbox-container"><input type="checkbox" name="pickedlocations[]" value="japan"> Japan</label>
+            <label class="checkbox-container"><input type="checkbox" name="pickedlocations[]" value="new_caledonia"> NEW Caledonia</label>
+            <label class="checkbox-container"><input type="checkbox" name="pickedlocations[]" value="french_polynesia"> French Polynesia</label>
+            <label class="checkbox-container"><input type="checkbox" name="pickedlocations[]" value="mexico"> Mexico</label>
+            <label class="checkbox-container"><input type="checkbox" name="pickedlocations[]" value="switzerland"> Switzerland</label>
+            <label class="checkbox-container"><input type="checkbox" name="pickedlocations[]" value="uk"> UK</label>
+            <label class="checkbox-container"><input type="checkbox" name="pickedlocations[]" value="france"> France</label>
+            <label class="checkbox-container"><input type="checkbox" name="pickedlocations[]" value="slovakia"> Slovakia</label>
+            <label class="checkbox-container"><input type="checkbox" name="pickedlocations[]" value="hungary"> Hungary</label>
+            <label class="checkbox-container"><input type="checkbox" name="pickedlocations[]" value="belarus"> Belarus</label>
+            <label class="checkbox-container"><input type="checkbox" name="pickedlocations[]" value="australia"> Australia</label>
+            <label class="checkbox-container"><input type="checkbox" name="pickedlocations[]" value="indonesia"> Indonesia</label>
+            <label class="checkbox-container"><input type="checkbox" name="pickedlocations[]" value="argentina"> Argentina</label>
+            <label class="checkbox-container"><input type="checkbox" name="pickedlocations[]" value="brazil"> Brazil</label>
+            <label class="checkbox-container"><input type="checkbox" name="pickedlocations[]" value="spain"> Spain</label>
+            <label class="checkbox-container"><input type="checkbox" name="pickedlocations[]" value="colombia"> Colombia</label>
+            <label class="checkbox-container"><input type="checkbox" name="pickedlocations[]" value="portugal"> Portugal</label>
+            <label class="checkbox-container"><input type="checkbox" name="pickedlocations[]" value="sweden"> Sweden</label>
+            <label class="checkbox-container"><input type="checkbox" name="pickedlocations[]" value="belgium"> Belgium</label>
+            <label class="checkbox-container"><input type="checkbox" name="pickedlocations[]" value="denmark"> Denmark</label>
+            <label class="checkbox-container"><input type="checkbox" name="pickedlocations[]" value="germany"> Germany</label>
+            <label class="checkbox-container"><input type="checkbox" name="pickedlocations[]" value="qatar"> Qatar</label>
+            <label class="checkbox-container"><input type="checkbox" name="pickedlocations[]" value="india"> India</label>
+            <label class="checkbox-container"><input type="checkbox" name="pickedlocations[]" value="united_arab_emirates"> United Arab Emirates</label>
+            <label class="checkbox-container"><input type="checkbox" name="pickedlocations[]" value="austria"> Austria</label>
+            <label class="checkbox-container"><input type="checkbox" name="pickedlocations[]" value="czechia"> Czechia</label>
+            <label class="checkbox-container"><input type="checkbox" name="pickedlocations[]" value="netherlands"> Netherlands</label>
+            <label class="checkbox-container"><input type="checkbox" name="pickedlocations[]" value="romania"> Romania</label>
+            <label class="checkbox-container"><input type="checkbox" name="pickedlocations[]" value="finland"> Finland</label>
+            <label class="checkbox-container"><input type="checkbox" name="pickedlocations[]" value="canada"> Canada</label>
+            <label class="checkbox-container"><input type="checkbox" name="pickedlocations[]" value="saudi_arabia"> Saudi Arabia</label>
+            <label class="checkbox-container"><input type="checkbox" name="pickedlocations[]" value="ireland"> Ireland</label>
+            <label class="checkbox-container"><input type="checkbox" name="pickedlocations[]" value="italy"> Italy</label>
+            <label class="checkbox-container"><input type="checkbox" name="pickedlocations[]" value="poland"> Poland</label>
+            <label class="checkbox-container"><input type="checkbox" name="pickedlocations[]" value="norway"> Norway</label>
+            <label class="checkbox-container"><input type="checkbox" name="pickedlocations[]" value="china"> China</label>
+            <label class="checkbox-container"><input type="checkbox" name="pickedlocations[]" value="chile"> Chile</label>
+            <label class="checkbox-container"><input type="checkbox" name="pickedlocations[]" value="philippines"> Philippines</label>
+            <label class="checkbox-container"><input type="checkbox" name="pickedlocations[]" value="peru"> Peru</label>
+            <label class="checkbox-container"><input type="checkbox" name="pickedlocations[]" value="greece"> Greece</label>
+            <label class="checkbox-container"><input type="checkbox" name="pickedlocations[]" value="thailand"> Thailand</label>
+            <label class="checkbox-container"><input type="checkbox" name="pickedlocations[]" value="south_korea"> South Korea</label>
+            <label class="checkbox-container"><input type="checkbox" name="pickedlocations[]" value="taiwan"> Taiwan</label>
+            <label class="checkbox-container"><input type="checkbox" name="pickedlocations[]" value="netherlands_antilles"> Netherlands Antilles</label>
+            <label class="checkbox-container"><input type="checkbox" name="pickedlocations[]" value="costa_rica"> Costa Rica</label>
+
+           <p></p><input class="filter-button" type="submit" value="FILTER">
+           <button class="filter-button" type="reset">Clear</button>
+          </form> 
+    </div>
+    
+
+    <script src="static/script.js"></script>
+
+</body>
+</html>

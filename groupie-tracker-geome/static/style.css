@@ -1,0 +1,342 @@
+body {
+  background: linear-gradient(rgba(0, 0, 0, 1), rgba(128, 128, 128, 1));
+  /* Градиент идет от черного (rgba(0, 0, 0, 1)) до серого (rgba(128, 128, 128, 1)) */
+  background-size: 100% 100%; /* Заполнить всю область фона */
+  background-attachment: fixed; /* Фиксированный фон */
+  background-repeat: no-repeat; /* Не повторять фон */
+}
+
+a {
+  color: rgb(54, 9, 98);
+}
+a:hover {
+  color: brown;
+}
+
+.countrybutton {
+  background-color: #96a1a8;
+  color: black; /* Изменение цвета текста на черный */
+  font-size: 24px; /* Увеличение размера шрифта */
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  -webkit-text-stroke: 0.3px white; /* Белая обводка букв для контраста */
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+  
+  }
+  .left-panel {
+          float: left;
+          width: 20%;
+          
+      }
+      .right-panel {
+          float: left;
+          width: 80%;
+          
+      }
+
+.return-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #0e680b;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.return-btn:hover {
+  background-color: #3362a3;
+}
+
+/* Устанавливаем цвет фона для ползунка, чтобы текст был виден */
+input[type="range"] {
+  background-color: #ffffff; /* Цвет фона ползунка */
+}
+
+/* Устанавливаем отступ для текста с числами */
+#rangeValueDisplay {
+  margin-left: 10px; /* Примерный отступ слева от текста */
+}
+
+.fredoka-text {
+  font-family: 'Fredoka One', sans-serif;
+}
+.hanalei-text {
+  font-family: 'Hanalei', cursive;
+}
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 150 150px;
+  margin-top: 20px;
+}
+.artist {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 70px;
+  padding: 0 10px;
+}
+.artist img {
+  display: block;
+  border-radius: 5%;
+}
+.artist h4 {
+  border-radius: 10px;
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 10px;
+  border: 1px solid black;
+}
+h1 {
+  color: rgb(233, 255, 253);
+  text-align: center;
+  border-radius: 10px;
+  background-color: rgba(29, 27, 27, 0.29);
+  padding: 10px;
+}
+.titl h1 {
+  font-size: 56px;
+  color: rgb(233, 255, 253);
+  text-align: center;
+  border-radius: 10px;
+  background-color: rgba(29, 27, 27, 0.5);
+  padding: 10px;
+  position: fixed;
+  z-index: 900;
+  top: 0;
+  width: 98%;
+}
+body {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+@media (max-width: 1400px) {
+  /* .container {
+    justify-content: flex-start;
+    padding: 0 10px;
+  } */
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0 10px;
+  }
+  .artist {
+    margin: 10px;
+  }
+}
+.header {
+  position: fixed;
+  z-index: 1000;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 50px;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 20px;
+}
+.header-buttons {
+  margin-right: 20px;
+}
+.header-buttons a {
+  margin-left: 10px;
+  text-decoration: none;
+  color: #333;
+  padding: 5px 10px;
+  border: 1px solid #333;
+  border-radius: 3px;
+  background-color: #ccc;
+}
+.line {
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 10px;
+  border-radius: 10px;
+  border-top: 1px solid #ccc;
+  margin-top: 20px;
+}
+@media (max-width: 500px) {
+  .artist img {
+    display: block;
+    border-radius: 50%;
+    height: 145px;
+    width: 145px;
+  }
+  h1 {
+    font-size: 20px;
+    color: rgb(233, 255, 253);
+    text-align: center;
+    border-radius: 10px;
+    background-color: rgba(29, 27, 27, 0.29);
+    padding: 10px;
+  }
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 15 15px;
+  }
+  .artist h4 {
+    font-size: 10px;
+    border-radius: 7px;
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 6px;
+    border: 0.5px solid black;
+  }
+}
+
+.filter-input {
+  padding: 8px;
+  font-size: 13px;
+  border: none;
+  border-radius: 5px;
+  background-color: #585858;
+  color: #fff;
+  margin-top: 5px;
+}
+
+
+.search {
+    color: #fff;
+    font-family: Arial, sans-serif;
+}
+
+.search h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.search form {
+    text-align: center;
+    margin-top: 120px;
+}
+
+.search-input {
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: #303030;
+    color: #fff;
+}
+
+.search-input::placeholder {
+    color: #aaa;
+}
+
+.search-button {
+  margin-top: 52px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #c00;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.search-button:hover {
+    background-color: #800;
+}
+
+.filter-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: rgb(6, 113, 35);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.filter-button:hover {
+    background-color: rgb(76, 177, 97);
+}
+
+@media (max-width: 310px) {
+  .header {
+    position: fixed;
+  z-index: 1000;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 50px;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 20px;
+  }
+  .header-buttons a {
+    margin-left: 10px;
+    text-decoration: none;
+    color: #333;
+    padding: 5px 10px;
+    border: none;
+    border-radius: none;
+  
+  }
+}
+
+/* Стили для подсказок */
+.suggestions {
+  position: absolute;
+  width: 50%;
+  left: 25%;
+  max-height: 200px;
+  overflow-y: auto;
+  background-color: #333; /* Темный фон */
+  color: #fff; /* Белый текст */
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  display: none;
+}
+
+.suggestion {
+  padding: 8px;
+  cursor: pointer;
+}
+
+.suggestion:hover {
+  background-color: #444; /* Цвет при наведении */
+}
+
+
+/*date style*/
+input[type="date"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* .rtl-range {
+  direction: rtl;
+} */
+
+.checkbox-container {
+  display: inline-block;
+  margin: 10px;
+  padding: 5px;
+  border: 2px solid #000; /* Начальная рамка - черная */
+  border-radius: 10px;    /* Закругленные углы */
+  transition: all 0.3s;   /* Плавное изменение стилей */
+}
+
+/* Стили для выбранных чекбоксов */
+.checkbox-container.checked {
+  background-color: green; /* Зеленый фон при выборе */
+  border-color: green;    /* Зеленая рамка при выборе */
+}
+
+
+
