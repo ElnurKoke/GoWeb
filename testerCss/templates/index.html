@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+	<html>
+	<head>
+		<link rel="stylesheet" href="/static/index.css">
+		<script src="https://unpkg.com/gsap@3.9.0/dist/gsap.min.js"></script>
+		<title>Регистрация и вход</title>
+	</head>
+	<body>
+		<img src=/static/index.png>
+		<a href="/logout" style="text-decoration: none;"><h1>SkyLink</h1></a>
+		{{if eq .User.ID 1}}
+		<p>ID:{{.User.Username}}</p>
+		<p>Имя:{{.User.Username}}</p>
+		<a href="/adminControl">Control</a>
+		{{else if gt .User.ID 1}}
+		<h2 style="color:white;">Name: {{.User.Username}}</h2>
+		<h3 style="color:white;">Point: {{.User.Point}}</h3>
+		<h4 style="color:white;">Today: {{.Time}}</h4>
+
+		<div class='cards-wrapper'>
+			
+			<div class='cards'>
+			<a href="/taskday/1" style="text-decoration: none;">
+				<button class='card card1' tabindex="-1">
+					<div class="icon">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 200">
+							<path d="M418.4 157.9A80 80 0 1 0 320 77.5l-183.8 73.6a80 80 0 1 0-22.1 129.3l145.6 127.4a80 80 0 1 0 120.9-42.2l37.8-207.7zm-262.1 74.3a78.3 78.3 0 0 0 3.7-21.7L343.8 137c3.6 3.5 7.4 6.7 11.6 9.5l-37.8 207.6a77.8 77.8 0 0 0-15.8 5.5L156.3 232.2z"/>
+						</svg>
+					</div>
+					<h2>Monday</h2>
+					<h4>Task</h4>    
+				</button>
+			</a>
+			<a href="/taskday/2" style="text-decoration: none;">
+					<button class='card card2' tabindex="-1">
+						<div class="icon">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 200">
+								<path d="M418.4 157.9A80 80 0 1 0 320 77.5l-183.8 73.6a80 80 0 1 0-22.1 129.3l145.6 127.4a80 80 0 1 0 120.9-42.2l37.8-207.7zm-262.1 74.3a78.3 78.3 0 0 0 3.7-21.7L343.8 137c3.6 3.5 7.4 6.7 11.6 9.5l-37.8 207.6a77.8 77.8 0 0 0-15.8 5.5L156.3 232.2z"/>
+							</svg>
+						</div>
+						<h2>Tuesday</"/logout"h2>
+						<h4>Task</h4>    
+					</button>
+			</a>
+			<a href="/taskday/3" style="text-decoration: none;">
+					<button class='card card3' tabindex="-1">
+						<div class="icon">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 200">
+								<path d="M418.4 157.9A80 80 0 1 0 320 77.5l-183.8 73.6a80 80 0 1 0-22.1 129.3l145.6 127.4a80 80 0 1 0 120.9-42.2l37.8-207.7zm-262.1 74.3a78.3 78.3 0 0 0 3.7-21.7L343.8 137c3.6 3.5 7.4 6.7 11.6 9.5l-37.8 207.6a77.8 77.8 0 0 0-15.8 5.5L156.3 232.2z"/>
+							</svg>
+						</div>
+						<h2>Wednesday</h2>
+						<h4>Task</h4>    
+					</button>
+			</a>
+			<a href="/taskday/4" style="text-decoration: none;"> 
+					<button class='card card4' tabindex="-1">
+						<div class="icon">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 200">
+								<path d="M418.4 157.9A80 80 0 1 0 320 77.5l-183.8 73.6a80 80 0 1 0-22.1 129.3l145.6 127.4a80 80 0 1 0 120.9-42.2l37.8-207.7zm-262.1 74.3a78.3 78.3 0 0 0 3.7-21.7L343.8 137c3.6 3.5 7.4 6.7 11.6 9.5l-37.8 207.6a77.8 77.8 0 0 0-15.8 5.5L156.3 232.2z"/>
+							</svg>
+						</div>
+						<h2>Thursday</h2>
+						<h4>Task</h4>    
+					</button>
+			</a>
+			<a href="/taskday/5" style="text-decoration: none;">  
+					<button class='card card5' tabindex="-1">
+						<div class="icon">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 200">
+					<path d="M418.4 157.9A80 80 0 1 0 320 77.5l-183.8 73.6a80 80 0 1 0-22.1 129.3l145.6 127.4a80 80 0 1 0 120.9-42.2l37.8-207.7zm-262.1 74.3a78.3 78.3 0 0 0 3.7-21.7L343.8 137c3.6 3.5 7.4 6.7 11.6 9.5l-37.8 207.6a77.8 77.8 0 0 0-15.8 5.5L156.3 232.2z"/>
+				</svg>
+						</div>
+						<h2>Friday</h2>
+						<h4>Task</h4>    
+					</button>
+			</a>
+
+			<a href="/taskday/6" style="text-decoration: none;">
+			  <button class='card card6' tabindex="-1">
+				<div class="icon">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 200">
+						<path d="M418.4 157.9A80 80 0 1 0 320 77.5l-183.8 73.6a80 80 0 1 0-22.1 129.3l145.6 127.4a80 80 0 1 0 120.9-42.2l37.8-207.7zm-262.1 74.3a78.3 78.3 0 0 0 3.7-21.7L343.8 137c3.6 3.5 7.4 6.7 11.6 9.5l-37.8 207.6a77.8 77.8 0 0 0-15.8 5.5L156.3 232.2z"/>
+					</svg>
+				</div>
+				<h2>Saturday</h2>
+				<h4>Task</h4>
+			  </button>
+		    </a>
+			<a href="/taskday/7" style="text-decoration: none;">  
+			  <button class='card card7' tabindex="-1">
+				<div class="icon">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 200">
+						<path d="M418.4 157.9A80 80 0 1 0 320 77.5l-183.8 73.6a80 80 0 1 0-22.1 129.3l145.6 127.4a80 80 0 1 0 120.9-42.2l37.8-207.7zm-262.1 74.3a78.3 78.3 0 0 0 3.7-21.7L343.8 137c3.6 3.5 7.4 6.7 11.6 9.5l-37.8 207.6a77.8 77.8 0 0 0-15.8 5.5L156.3 232.2z"/>
+					</svg>
+				</div>
+				<h2>Sunday</h2>
+				<h4>Task</h4>
+			  </button>
+			</a>
+			</div>
+			<button class="arrow-btn arrow-btn-prev" tabindex="0">
+			  <svg viewBox="0 0 256 512">
+				<path d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z" />
+			  </svg>
+			</button>
+			<button class="arrow-btn arrow-btn-next" tabindex="0">
+			  <svg viewBox="0 0 256 512">
+				<path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z" />
+			  </svg>
+			</button>
+			<div class="AI">
+				<div class="AI">
+					<div class="chat-input">
+						<form action="/send-message" method="post" class="chat-box">
+							<div class="messages">
+								{{.Answer}}
+							</div>
+							<textarea name="chat-input" placeholder="Введите сообщение"></textarea>
+							<input type="submit" class="send-btn" value="Отправить">
+						</form>
+					</div>
+					<label for="chat-toggle" class="chat-tab">Чат с ботом</label>
+					<input type="checkbox" id="chat-toggle" style="display: none;">
+				</div>
+		  </div>
+		  
+		  </div>
+		  <script>
+			// JavaScript code here
+			document.addEventListener("DOMContentLoaded", function () {
+				const chatToggle = document.getElementById("chat-toggle");
+				const chatTabContent = document.querySelector(".chat-input");
+		
+				chatToggle.addEventListener("change", function () {
+					if (this.checked) {
+						chatTabContent.style.display = "block";
+					} else {
+						chatTabContent.style.display = "none";
+					}
+				});
+			});
+		</script>
+		  {{else}}
+		  <a href="/register">Sign in</a><br>
+		  <a href="/login">Login</a>
+		  {{end}}
+		  <script id="rendered-js" src="../static/script.js"></script>
+		
+	</body>
+	</html>

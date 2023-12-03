@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/static/register.css">
+    <script src="https://unpkg.com/gsap@3.9.0/dist/gsap.min.js"></script>
+    <title>Registration</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Registration</h1>
+        <form method="post" action="/register">
+            <label for="login">Login:</label>
+            <input type="text" name="login" required placeholder="login*"><br>
+            <label for="password">Password:</label>
+            <input type="password" name="password" required placeholder="Password*"><br>
+            <label for="username">Username:</label>
+            <input type="text" name="username" required placeholder="Username*"><br>
+            <input type="submit" value="Sign in">
+            <a href="/login">have a acc?</a>
+        </form>
+    </div>
+</body>
+</html>
