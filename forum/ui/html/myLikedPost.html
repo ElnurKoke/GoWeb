@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My liked post</title>
+  <link rel="stylesheet" href="../static/style.css">
+</head>
+
+  <header>
+    {{if .User.IsAuth}}
+     <nav>
+        <h1><a href="/">{{.Username}}</a></h1>
+        <div class="left">
+            <a href="/post/myLikedPost">My Liked Posts</a>
+        </div> 
+        <div class="center">
+            <a href="/post/myPost">My Posts</a>
+            <a href="/post/create">Create Post</a>
+        </div>
+        <div class="right">
+            <a href="/logout">Logout</a>
+        </div>
+      </nav>
+    {{else}}
+    <nav>
+      <h1>Forum</h1>
+      <div class="left">
+        <a href="/signin">Sign In</a>
+      </div> 
+      <div class="center">
+        <a href="/signup">Sign Up</a>
+      </div>
+      <div class="right">
+        <a href="#contact" title="Elnur Bauyrzan:
+            Tel num: +77*****5261
+            Tg: @El_n_uR
+            Nick: ebauyrzh
+            ">Contact</a>
+      </div>
+    </nav>
+    {{end}}
+  </header>
+
+
+  <div class="container">
+
+    
+    <div class="scroll-container">
+            {{range .Category}}
+        <a href="/?category={{.}}">{{.}}</a>
+        {{end}}
+    </div>
+  </div>
+
+
+  <section>
+    {{range .Posts}}
+    <div class="container">
+      <div class="post">
+         <a href="/post/?id={{.Id}}"></a> 
+        <div class="post__header">
+          <p>{{.Author}}</p>
+          <a href="/post/?id={{.Id}}" class="title">{{.Title}}</a>
+        </div>
+        <p class="description">{{.Description}}</p>
+
+      </div>
+    </div>
+
+    {{end}}
+  </section>
+
+  <footer>
+      <p>Other Applications: <a href="#app1">App 1</a>, <a href="#app2">App 2</a>, <a href="#app3">App 3</a></p>
+  </footer>
+
+</body>
+
+</html>
