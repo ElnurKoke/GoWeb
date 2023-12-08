@@ -8,6 +8,11 @@ body {
 padding: 0;
 margin: 0;
 }
+@media (min-width: 3000px) {
+  body {
+    background: url('oboi2.jpg') repeat;
+  }
+}
 
 header {
     position: fixed;

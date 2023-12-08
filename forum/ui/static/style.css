@@ -10,6 +10,11 @@ body {
     padding: 0;
     margin: 0;
   }
+  @media (min-width: 3000px) {
+    body {
+      background: url('oboi.jpg') repeat;
+    }
+  }
   header {
     position: fixed;
     top: 0;
@@ -48,9 +53,12 @@ body {
   
   nav .left a:hover,
   nav h1 a:hover,
-  nav .center a:hover,
-  nav .right a:hover {
+  nav .center a:hover {
     color: rgb(68, 217, 236);
+  }
+
+  nav .right a:hover {
+    color: rgb(214, 60, 49);
   }
   
   footer {
@@ -130,4 +138,19 @@ body {
 .category span {
     margin-right: 5px;
     font-weight: bold;
+}
+
+footer p {
+  white-space: nowrap;
+  overflow-x: auto;
+}
+
+footer a {
+  text-decoration: none;
+  color: #ffffff;
+  transition: color 0.3s;
+}
+
+footer a:hover {
+  color: #1da1f2;
 }

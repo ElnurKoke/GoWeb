@@ -1,5 +1,5 @@
     body {
-      background-color: #171a21; 
+      /* background-color: #171a21;  */
       color: #fff;
       font-family: 'Arial', sans-serif;
       display: flex;
@@ -7,7 +7,18 @@
       justify-content: center;
       height: 100vh;
       margin: 0;
+      background: url('error.jpg') repeat center center fixed;
     }
+    
+  *{
+    padding: 0;
+    margin: 0;
+  }
+  @media (min-width: 3000px) {
+    body {
+      background: url('error.jpg') repeat;
+    }
+  }
 
     .error {
       text-align: center;
