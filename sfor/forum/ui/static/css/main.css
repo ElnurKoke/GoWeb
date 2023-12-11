@@ -1,0 +1,247 @@
+/* Reset some default styles */
+body, h1, h2, h3, p, ul, li, table {
+    margin: 0;
+    padding: 0;
+}
+
+/* Basic styling for the page */
+body {
+    font-family: 'Ubuntu Mono', monospace;
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header and footer */
+header, footer {
+    background-color: #222;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+}
+
+/* Navigation */
+nav {
+    background-color: #444;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 1rem;
+}
+
+.nav-links a {
+    color: #333;
+    text-decoration: none;
+    margin-right: 1rem;
+}
+
+/* Main content area */
+main {
+    padding: 2rem;
+}
+
+/* Form elements */
+form div {
+    margin-bottom: 1rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.25rem;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    overflow: hidden; /* Hide overflow text */
+}
+
+/* Buttons */
+button {
+    padding: 0.5rem 1rem;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1rem;
+}
+
+th, td {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    text-align: left;
+}
+
+/* Comments */
+.comments {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.comments th, .comments td {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    text-align: left;
+}
+
+/* Flash messages */
+.flash {
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.special-box {
+    border: 1px solid #ccc;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+/* Forum content */
+.forum-content {
+    white-space: pre-wrap; /* Preserve line breaks */
+    overflow: auto; /* Add scrollbar if content overflows */
+}
+
+/* Metadata section */
+.metadata {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Created and Expires times */
+.forum-created,
+.forum-expires {
+    margin: 0;
+}
+
+.comment-text {
+    white-space: pre-wrap;
+}
+
+/* Add padding between elements */
+.forum {
+    margin-bottom: 2rem;
+}
+
+.comments {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.comment-reactions {
+    padding-top: 1rem;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+.like-button, .dislike-button {
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+}
+
+.liked {
+    background-color: green;
+}
+
+.disliked {
+    background-color: red;
+}
+
+.not-liked, .not-disliked { 
+    background-color: gray;
+}
+
+.likes {
+    margin-right: 10px;
+    color: green;
+}
+
+.dislikes {
+    margin-right: 10px;
+    color: red;
+}
+
+.forum-id {
+    float: right;
+    font-weight: bold;
+    color: #888;
+}
+
+/* Hide tags list if no tags are present */
+.tags {
+    list-style: none;
+    margin: 5px 0;
+    padding: 0;
+    display: inline-block;
+}
+
+.tags li {
+    display: inline;
+    margin-right: 10px;
+}
+
+nav a {
+    margin-right: 10px;
+    padding: 8px 12px;
+    border-radius: 5px;
+    color: #333;
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+nav a:hover {
+    background-color: #007bff;
+    color: #fff;
+}
+
+input[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+.error {
+    color: red;
+}

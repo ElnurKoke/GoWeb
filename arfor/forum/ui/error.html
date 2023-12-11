@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Oops! Error Page</title>
+	<link rel="stylesheet" href="/ui/css/error.css">
+</head>
+<body>
+	<div class="container">
+		<h1>{{.Code}}</h1>
+		<p>Something went wrong. Please try again later.</p>
+		<a href="/" class="button">Go back</a>
+        <span class="text-error">
+            {{.Message}}
+         </span>
+	</div>
+</body>
+</html>

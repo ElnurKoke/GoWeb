@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{{ .Post.Title }}</title>
+	<meta charset="UTF-8">
+	{{ $IsAuth := .User.IsAuth }}
+	{{ $PostID := .Post.Id }}
+	<link rel="stylesheet" href="../static/post.css">
+</head>
+<body>
+	<header>
+		{{if .User.IsAuth}}
+		<nav>
+			<h1><a href="/">{{.Username}}</a></h1>
+			<div class="left">
+				<a href="/post/myLikedPost">My Liked Posts</a>
+			</div> 
+			<div class="center">
+				<a href="/post/myPost">My Posts</a>
+				<a href="/post/create">Create Post</a>
+			</div>
+			<div class="right">
+				<a href="/logout">Logout</a>
+			</div>
+		</nav>
+		{{else}}
+		<nav>
+		  <h1>Forum</h1>
+		  <div class="left">
+			<a href="/signin">Sign In</a>
+		  </div> 
+		  <div class="center">
+			<a href="/signup">Sign Up</a>
+		  </div>
+		  <div class="right">
+			<a href="#contact" title="Elnur Bauyrzan:
+            Tel num: +77*****5261
+            Tg: @El_n_uR
+            Nick: ebauyrzh
+            ">Contact</a>
+		  </div>
+		</nav>
+		{{end}}
+	</header>
+
+	<section>
+   
+		<div class="container">
+		<div class="post">
+			<h1>{{ .Post.Title }}</h1>
+			<p>{{ .Post.Description }}</p>
+			<p>Author: {{ .Post.Author }}</p>
+			<p>Likes: {{ .Post.Likes }}, Dislikes: {{ .Post.Dislikes }}</p>
+			{{if .User.IsAuth}}
+
+			<form action="/emotion/post/?id={{.Post.Id}}" method="post">
+				<button type="submit" value="like" name="islike">LIKE</button>
+				<button type="submit" value="dislike" name="islike">DISLIKE</button>
+			</form>
+			{{ end }}
+
+		</div>
+		<h2 style="text-align: right;">Comments : </h2>
+		<div class="comments">
+		{{ if .Comment }}
+			<ul>
+				{{ range .Comment }}
+					<li>
+					<h3>{{ .Creator }} </h3>
+					<p style="color: #808080;">{{ .Created_at }}</p>
+					<!-- <p style="display:flex; overflow:scroll; padding:5px;">{{ .Text }}</p> -->
+					<p style="text-align: right;">{{ .Text }}</p>
+					<p style="color: #808080;">Likes: {{ .Likes }}, Dislikes: {{ .Dislikes }}</p>
+						{{ if $IsAuth}}
+							<form action="/emotion/comment/?id={{.Id}}&postid={{$PostID}}" method="post">
+								<button type="submit" value="like" name="islike">LIKE</button>
+								<button type="submit" value="dislike" name="islike">DISLIKE</button>
+							</form>
+
+						{{ end }}
+					</li>
+				{{ end }}
+			</ul>
+		{{ else }}
+			<p>No comments yet.</p>
+		{{ end }}
+		</div>
+	</section>
+
+	<footer>
+		<div class="emotion">
+			{{if .User.IsAuth}}
+			
+			<form action="/post/?id={{.Post.Id}}" method="post">
+				<input class="comment_text" type="text"  id="text" name="text" maxlength="100" placeholder="Add a comment...">
+				<button type="submit" class="publish-button">
+                    <img src="../static/icon.png" alt="Publish Icon"></button>
+			</form>
+			{{ end }}
+			
+		</div>
+	</footer>
+</body>
+</html>

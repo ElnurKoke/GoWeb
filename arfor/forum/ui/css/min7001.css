@@ -1,0 +1,19 @@
+
+  
+  @media (max-width: 700px) {
+      .row1 {
+          display: block;
+          background-color: #8bc34a;
+          color: #ffffff;
+          padding: 10px;
+          border-radius: 10px 10px 0 0;
+      }
+      .row4 {
+          flex-wrap: wrap;
+          display: flex;
+          justify-content: space-between;
+          padding: 10px;
+          background-color: #c3e6cb;
+          border-radius: 0 0 10px 10px;
+      }
+  }

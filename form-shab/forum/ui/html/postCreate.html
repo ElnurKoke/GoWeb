@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create post</title>
+    <link rel="stylesheet" href="../static/postcreate.css">
+
+</head>
+
+<body>
+
+  <header>
+    <nav>
+        <h1><a href="/">Create Post</a></h1>
+        <div class="left">
+            <a href="/post/myLikedPost">My Liked Posts</a>
+        </div> 
+        <div class="center">
+            <a href="/post/myPost">My Posts</a>
+            <a href="/post/create">Create Post</a>
+        </div>
+        <div class="right">
+            <a href="/logout">Logout</a>
+        </div>
+      </nav>
+  </header>
+
+  <section>
+    <form method="POST" action="/post/create">
+        <label>Title</label>
+        <input type="text" name="title" maxlength="19" />
+
+        <label>Description</label>
+        <textarea class="comment-textarea" name="description" maxlength="300"></textarea>
+
+        <label>Category</label>
+        <input type="text" name="category" maxlength="19" />
+
+        <a id="add-category">Add Category</a>
+
+        <input type="submit" value="CREATE" />
+    </form>
+  </section>
+
+  <footer>
+      <p>Other Applications: <a href="#app1">App 1</a>, <a href="#app2">App 2</a>, <a href="#app3">App 3</a></p>
+  </footer>
+</body>
+<script>
+    const addCategoryButton = document.querySelector("#add-category")
+
+
+
+    //   const submitButton = document.querySelector('input[type="submit"]');
+    addCategoryButton.addEventListener('click', () => {
+        const form = document.querySelector('form');
+        const categoryInput = document.createElement('input');
+        categoryInput.setAttribute('type', 'text');
+        categoryInput.setAttribute('name', 'category');
+        const categoryLabel = document.createElement('label');
+        categoryLabel.innerHTML = 'category';
+        categoryLabel.setAttribute('for', 'category');
+        var break1 = document.createElement('br');
+
+        var break2 = document.createElement('br');
+        var break3 = document.createElement('br');
+        form.insertBefore(categoryLabel, addCategoryButton);
+        form.insertBefore(break1, addCategoryButton);
+        form.insertBefore(categoryInput, addCategoryButton);
+        form.insertBefore(break2, addCategoryButton);
+        form.insertBefore(break3, addCategoryButton);
+    });
+</script>
+
+</html>

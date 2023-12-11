@@ -7,10 +7,7 @@ docBuild:
 	docker build -t forum .
 
 docrun: docBuild
-	13
-
-docstop:
-	docker stop $$(docker ps -a -q)
+	docker run -it -p 8080:8080 forum
 
 docDelete:
 	docker rmi forum

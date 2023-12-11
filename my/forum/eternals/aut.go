@@ -1,0 +1,4 @@
+package eternals
+
+func TestMain() {
+}

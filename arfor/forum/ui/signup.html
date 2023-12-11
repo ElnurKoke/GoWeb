@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/ui/css/auth.css">
+    <title>SignUp</title>
+    <style>
+      .alert {
+  position: relative;
+  top: 10;
+  left: 0;
+  width: auto;
+  height: auto;
+  padding: 10px;
+  margin: 10px;
+  line-height: 1.8;
+  border-radius: 5px;
+  cursor: hand;
+  cursor: pointer;
+  font-family: sans-serif;
+  font-weight: 400;
+}
+
+.alertCheckbox {
+  display: none;
+}
+
+:checked + .alert {
+  display: none;
+}
+
+.alertText {
+  display: table;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 16px;
+}
+
+.alertClose {
+  float: right;
+  padding-top: 5px;
+  font-size: 10px;
+}
+
+.clear {
+  clear: both;
+}
+
+.info {
+  background-color: #EEE;
+  border: 1px solid #DDD;
+  color: #999;
+}
+
+.success {
+  background-color: #EFE;
+  border: 1px solid #DED;
+  color: #9A9;
+}
+
+.notice {
+  background-color: #EFF;
+  border: 1px solid #DEE;
+  color: #9AA;
+}
+
+.warning {
+  background-color: #FDF7DF;
+  border: 1px solid #FEEC6F;
+  color: #C9971C;
+}
+
+.error {
+  background-color: #FEE;
+  border: 1px solid #EDD;
+  color: #A66;
+}
+    </style>
+</head>
+<body>
+  <div class="container" style="width: 90%; margin:auto;">
+    <form action="/signup" method="post">
+      <div class="container">
+        {{if .Mess}}
+        <label>
+          <input type="checkbox" class="alertCheckbox" autocomplete="off" />
+          <div class="alert error">
+            <span class="alertClose">X</span>
+            <span class="alertText">{{.Mess}}
+            <br class="clear"/></span>
+          </div>
+        </label>
+        {{end}}
+        <h1>Register</h1>
+        <hr>
+    
+        <label for="email"><b>Email</b></label>
+        <input type="text" placeholder="Enter Email" name="email" required>
+        <label for="username"><b>username</b></label>
+        <input type="text" placeholder="Enter Email" name="username" required>
+        <label for="psw"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="psw" required>
+        <label for="repeatpsw"><b>Repeat password</b></label>
+        <input type="password" placeholder="Repeat password" name="repeatspw" required>
+    
+        <hr>
+    
+        <button type="submit" class="registerbtn">Register</button>
+        <a href="/"><button type="button" class="registerbtn">Back</button></a>
+      </div>
+    
+      <div class="container signin">
+        <p>Already have an account? <a href="/signin">SignIn</a>.</p>
+      </div>
+    </form>
+  </div>
+</body>
+</html>

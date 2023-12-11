@@ -1,0 +1,36 @@
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="/ui/css/auth.css">
+      <title>SignIn</title>
+  </head>
+  <body>
+    <div class="container" style="width: 90%; margin: auto;">
+      
+      <form action="/signin" method="post">
+        <div class="container">
+          <h1>SignIn</h1>
+          <hr>
+      
+          <label for="email"><b>Email</b></label>
+          <input type="text" placeholder="Enter Email" name="email" required>
+          
+          <label for="psw"><b>Password</b></label>
+          <input type="password" placeholder="Enter Password" name="psw" required>
+      
+          <hr>
+    
+          <button type="submit" class="registerbtn">Login</button>
+          <a href="/"><button type="button" class="registerbtn">Back</button></a>
+        </div>
+      
+        <div class="container signin">
+          <p>Don't have an account? <a href="/signup">SignUp</a>.</p>
+        </div>
+      </form>
+    </div>
+  </body>
+  </html>
